@@ -20,8 +20,8 @@ Una vez instalada la iniciamos en modo terminal interactiva:
 ```bash
 sudo yersinia -I
 ```
-
-![[Pasted image 20251019160536.png]]
+<img src="https://github.com/Isi067/DHCP/edit/main/docs/images/imageStarvation1.png" alt="img1">
+![image](https://github.com/Isi067/DHCP/edit/main/docs/images/imageStarvation1.png)
 
 Como podemos ver arriba a la izq estamos en "STP mode", para cambiar a DHCP tenemos que usar la tecla `g` para poder escoger entre diferentes protocolos:
 
