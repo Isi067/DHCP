@@ -27,7 +27,7 @@
 6. [Uso recomendado (pasos rápidos)](#uso-recomendado-pasos-rápidos)
 7. [Mitigaciones y buenas prácticas](#mitigaciones-y-buenas-prácticas)
 8. [Contribuir](#contribuir)
-9. [Licencia y contacto](#licencia)
+9. [Licencia](#licencia)
 
 ---
 
