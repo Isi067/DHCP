@@ -33,7 +33,7 @@
 
 ## ¿Qué es DHCP?
 
-DHCP (Dynamic Host Configuration Protocol) es un protocolo de red que automatiza la asignación de parámetros IP (dirección IP, máscara de subred, puerta de enlace, DNS, etc.) a los dispositivos que se conectan a una red. Para una explicación más detallada, ver la sección: [docs/DHCP.md](docs/dhcp.md).
+DHCP (Dynamic Host Configuration Protocol) es un protocolo de red que automatiza la asignación de parámetros IP (dirección IP, máscara de subred, puerta de enlace, DNS, etc.) a los dispositivos que se conectan a una red. Para una explicación más detallada, ver la sección: [docs/DHCP.md](docs/DHCP.md).
 
 ---
 
