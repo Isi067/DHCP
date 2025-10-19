@@ -71,7 +71,7 @@ Recomendado para el laboratorio:
 * Red aislada (Se sugiere red NAT virtual) o emulación (p. ej. GNS3, EVE-NG, máquinas virtuales).
 * Máquina atacante: Linux (Kali/Parrot/Ubuntu) con privilegios para enviar/recibir paquetes raw.
 * Máquina víctima: cliente DHCP estándar (Windows, Linux, etc.).
-* Servidor DHCP legítimo para comparar comportamientos.
+* Servidor [DHCP legítimo](docs/ConfigurandoServidorDHCP.md) para comparar comportamientos.
 * Herramientas sugeridas: `yersinia`, `dhclient`, `ettercap`, utilidades propias incluidas en las carpetas de réplica.
 
 **Nota:** Asegúrate de tener permisos y de trabajar en un entorno de pruebas controlado.
