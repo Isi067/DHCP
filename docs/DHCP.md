@@ -1,13 +1,10 @@
 # Que es el DHCP?
-----------------------------------
 El **DHCP** (_Dynamic Host Configuration Protocol_) es un **protocolo de red de capa 7 (cliente/servidor)** del modelo **OSI**.Su principal función es **asignar direcciones IP de forma automática** a los dispositivos que se conectan a la red.
 
 Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red[enlace a ¿QUÉ ASIGNA?]]. De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para comunicarse dentro de la red.
 
 
 # ORIGEN
-----------------------------------
-
 El protocolo **DHCP no se creó desde cero**, sino que **evolucionó a partir de un protocolo anterior llamado BOOTP (Bootstrap Protocol)**.
 🔹**BOOTP** fue definido originalmente en la **[RFC 951](https://datatracker.ietf.org/doc/html/rfc951)**, su función principal era permitir que un ordenador sin sistema operativo (por ejemplo, una estación de trabajo o un dispositivo de red recién encendido) pudiera **obtener automáticamente su dirección IP y la ubicación de un archivo de arranque** desde un servidor, facilitando el **arranque remoto** mediante red (lo que hoy conocemos como **PXE Boot**).
 
@@ -23,7 +20,6 @@ Posteriormente, se publicó la **[RFC 1541 (1993)](https://datatracker.ietf.org/
 
 
 # ¿QUÉ ASIGNA?
-----------------------------------
 El Servidor DHCP puede asignar parametros de red como:
 - Direccion IP de la red
 - Mascara de red
@@ -39,12 +35,10 @@ El Servidor DHCP puede asignar parametros de red como:
 
 
 # PUERTOS
-----------------------------------
 Los puertos proveidos por la IANA (_Internet Assigned Numbers Authority_) son por UDP los puertos 67 y 68 para IPv4 (tambien reservados para el protocolo Bootstrap) junto a los puertos 546 y 547 para IPv6.
 
 
 # Modos de asignacion DHCP
-----------------------------------
 Existen 3 modos de asignacion de IP en DHCP:
 - Manual
 	- El administrador de red asigna una IP concreta a través de una tabla asociando las direcciones IP a la dirección MAC de cada equipo.
@@ -55,7 +49,6 @@ Existen 3 modos de asignacion de IP en DHCP:
 
 
 # APIPA
-----------------------------------
 Cuando nuestro cliente DHCP no recibe ninguna direccion IP despues de 30 o 60 segundos, nuestro cliente utiliza un proceso llamado **APIPA** (_Automatic Private Internet Protocol Addressing_).
 
 **APIPA** es un protocolo que utilizan los sistemas operativos para obtener configuracion de red cuando estan configurados para obtenerla de manera automatica (cliente **DHCP**) pero no encuentra ningun servidor DHCP.
@@ -72,11 +65,11 @@ Aún asi los sistemas operativos reintentan conectarse al servidor DHCP
 | Windows           | 60 segundos                   | Cada 5 minutos          |
 | Linux (dhclient*) | 30 - 45 segundos              | Cada 5-10 minutos       |
 | macOS             | 30 segundos                   | Cada 5 minutos          |
+
 *dhclient: Cliente DHCP controlado por NetworkManager mediante dnsmasq (dependiendo de la configuracion)
 
 
 # Negociación DHCP en asignación automática
-----------------------------------
 La asignación automática de direcciones IP mediante el protocolo DHCP tiene lugar en 4 pasos/paquetes consecutivos:
 - Discover
 	- El cliente DHCP envia un **DHCPDISCOVER** desde la ip y puerto **0.0.0.0:68** hacia **255.255.255.255:67**. Al enviarlo hacia broadcast (255.255.255.255) el switch lo envia hacia todos los equipos de la red local, como el servidor DHCP siempre escucha por el puerto 67, recibe el paquete y pasa al siguiente paso.
