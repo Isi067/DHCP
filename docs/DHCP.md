@@ -4,7 +4,7 @@ El **DHCP** (_Dynamic Host Configuration Protocol_) es un **protocolo de red de 
 Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red](##QUÉ-ASIGNA). De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para poder comunicarse dentro de la red.
 
 
-#### ORIGEN
+## ORIGEN
 El protocolo **DHCP no se creó desde cero**, sino que **evolucionó a partir de un protocolo anterior llamado BOOTP (Bootstrap Protocol)**.
 🔹**BOOTP** fue definido originalmente en la **[RFC 951](https://datatracker.ietf.org/doc/html/rfc951)**, su función principal era permitir que un ordenador sin sistema operativo (por ejemplo, una estación de trabajo o un dispositivo de red recién encendido) pudiera **obtener automáticamente su dirección IP y la ubicación de un archivo de arranque** desde un servidor, facilitando el **arranque remoto** mediante red (lo que hoy conocemos como **PXE Boot**).
 
