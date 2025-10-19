@@ -1,10 +1,10 @@
 # ¿Qué es el DHCP? 
 El **DHCP** (_Dynamic Host Configuration Protocol_) es un **protocolo de red de capa 7 (cliente/servidor)** del modelo **OSI**. Su principal función es **asignar direcciones IP de forma automática** a los dispositivos que se conectan a la red.
 
-Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red](#QUÉ-ASIGNA). De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para poder comunicarse dentro de la red.
+Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red](##QUÉ-ASIGNA). De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para poder comunicarse dentro de la red.
 
 
-# ORIGEN
+#### ORIGEN
 El protocolo **DHCP no se creó desde cero**, sino que **evolucionó a partir de un protocolo anterior llamado BOOTP (Bootstrap Protocol)**.
 🔹**BOOTP** fue definido originalmente en la **[RFC 951](https://datatracker.ietf.org/doc/html/rfc951)**, su función principal era permitir que un ordenador sin sistema operativo (por ejemplo, una estación de trabajo o un dispositivo de red recién encendido) pudiera **obtener automáticamente su dirección IP y la ubicación de un archivo de arranque** desde un servidor, facilitando el **arranque remoto** mediante red (lo que hoy conocemos como **PXE Boot**).
 
@@ -19,7 +19,7 @@ Sin embargo, **BOOTP tenía limitaciones**, como que requería configuraciones m
 Posteriormente, se publicó la **[RFC 1541 (1993)](https://datatracker.ietf.org/doc/html/rfc1541)**, que **corrigió errores y aclaró detalles técnicos** del estándar inicial. Más tarde, la versión definitiva y actualizada del protocolo quedó documentada en la **[RFC 2131(1997)](https://datatracker.ietf.org/doc/html/rfc2131)**, que sustituyó a las anteriores.
 
 
-# ¿QUÉ ASIGNA?
+## ¿QUÉ ASIGNA?
 El Servidor DHCP puede asignar parámetros de red como:
 - Dirección IP de la red
 - Mascara de red
@@ -34,11 +34,11 @@ El Servidor DHCP puede asignar parámetros de red como:
 - rutas hacia servidores **PXE BOOT**
 
 
-# PUERTOS
+## PUERTOS
 Los puertos proveídos por la IANA (_Internet Assigned Numbers Authority_) son por UDP los puertos 67 y 68 para IPv4 (tambien reservados para el protocolo Bootstrap) junto a los puertos 546 y 547 para IPv6.
 
 
-# Modos de asignación DHCP
+## Modos de asignación DHCP
 Existen 3 modos de asignación de IP en DHCP:
 - Manual
 	- El administrador de red asigna una IP concreta a través de una tabla asociando las direcciones IP a la dirección MAC de cada equipo.
@@ -48,7 +48,7 @@ Existen 3 modos de asignación de IP en DHCP:
 	- Es igual que la automática solo que la concesión DHCP no es indefinida, sino que tiene un límite de tiempo.
 
 
-# APIPA
+## APIPA
 Cuando nuestro cliente DHCP no recibe ninguna dirección IP después de 30 o 60 segundos, nuestro cliente utiliza un proceso llamado **APIPA** (_Automatic Private Internet Protocol Addressing_).
 
 **APIPA** es un protocolo que utilizan los sistemas operativos para obtener configuración de red cuando están configurados para obtenerla de manera automática (cliente **DHCP**) pero no encuentra ningún servidor DHCP.
@@ -69,12 +69,12 @@ Aún así los sistemas operativos reintentan conectarse al servidor DHCP
 *dhclient: Cliente DHCP controlado por NetworkManager mediante dnsmasq (dependiendo de la configuración)
 
 
-# Negociación DHCP en asignación automática
+## Negociación DHCP en asignación automática
 La asignación automática de direcciones IP mediante el protocolo DHCP tiene lugar en 4 pasos/paquetes consecutivos:
 - Discover
 	- El cliente DHCP envía un **DHCPDISCOVER** desde la ip y puerto **0.0.0.0:68** hacia **255.255.255.255:67**. Al enviarlo hacia broadcast (255.255.255.255) el switch lo envía hacia todos los equipos de la red local, como el servidor DHCP siempre escucha por el puerto 67, recibe el paquete y pasa al siguiente paso.
 - Offer
-	- El servidor DHCP responde al paquete **DHCPDISCOVER** del cliente **DHCP** con el paquete **DHCPOFFER** hacia el puerto **68**, este es un paquete con el **_lease time_** (si es dinámica) y [parametros de red](#QUÉ-ASIGNA).
+	- El servidor DHCP responde al paquete **DHCPDISCOVER** del cliente **DHCP** con el paquete **DHCPOFFER** hacia el puerto **68**, este es un paquete con el **_lease time_** (si es dinámica) y [parametros de red](##QUÉ-ASIGNA).
 - Request
 	- El Cliente **DHCP** le pide al servidor **DHCP** que se la reserve solo a él (**DHCPREQUEST**).
 - Acknowlege
@@ -82,7 +82,7 @@ La asignación automática de direcciones IP mediante el protocolo DHCP tiene lu
 
 Estos son los pasos de la negociación **DORA** (_Discover, Offer, Request, Acknowlege_), pero ¿que ocurre si hay **mas** de una petición **DHCP**? ¿y si hay **mas** de un servidor **DHCP**?
 
-# Soluciones
+## Soluciones
 - Si hay más de 1 **DHCPDISCOVER** realmente no ocurre nada, ya que el servidor no responde a la dirección —En este caso la 0.0.0.0— sino que respondose a la dirección MAC del equipo, por lo que no hay conflictos en términos de clientes.
 - Si en una red existe mas de un servidor **DHCP**, lo único que hace el cliente es escoger el primer **DHCOFFER** que le llega. ¿Qué podemos hacer para que nuestro servidor sea el primero en dar el **DHCPOFFER**?
 	- Optimizar la red
