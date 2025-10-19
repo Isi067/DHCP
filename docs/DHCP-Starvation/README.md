@@ -7,6 +7,8 @@ Nos referimos a la "**DHCP Starvation Attack Replication**" (**replicación de u
 
 Para poder realizar el ataque utilizaremos una herramienta llamada **Yersinia**, esta es una herramienta diseñada para ejecutar ataques sobre protocolos de Capa 2 del modelo OSI. Aunque DHCP es un protocolo de capa de aplicación (funciona sobre UDP/IP), muchas de sus operaciones iniciales se realizan mediante broadcasts a nivel de enlace, por lo que Yersinia puede manipular las tramas Ethernet para llevar a cabo ataques relacionados con DHCP.
 
+## Instalacion de herramientas
+
 Una vez sabemos lo que es **Yersinia** y estamos en nuestra máquina atacante, vamos a instalar **y
 Yersinia**.
 
@@ -16,6 +18,8 @@ pacman -S yersinia #Para Arch, Manjaro, etc.
 ```
 
 Una vez instalada la iniciamos en modo terminal interactiva:
+
+## Ataque
 
 ```bash
 sudo yersinia -I
