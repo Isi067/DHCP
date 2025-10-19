@@ -25,23 +25,23 @@ sudo yersinia -I
 
 Como podemos ver arriba a la izq estamos en "STP mode", para cambiar a DHCP tenemos que usar la tecla `g` para poder escoger entre diferentes protocolos:
 
-![[Pasted image 20251019160517.png]]
+![img1](../images/imageStarvation2.png)
 
 Una vez cambiado hacemos click a la `x` para listar los ataques
 
-![[Pasted image 20251019160431.png]]
+![img1](../images/imageStarvation3.png)
 
 Seleccionamos el `1` y vemos que en tan solo 10segundos ya ha enviado más de 1M de paquetes.
 
-![[Pasted image 20251019160714.png]]
+![img1](../images/imageStarvation4.png)
 
 Si revisamos el trafico esnifando la red con wireshark encontramos lo siguiente: Un monton de paquetes **DHCPDISCOVER**
 
-![[2025-10-16-015320_hyprshot.png]]
+![img1](../images/imageStarvation5.png)
 
 Esto hace que el cliente sea incapaz de recivir una IP
 
-![[Pasted image 20251019163837.png]]
+![img1](../images/imageStarvation6.png)
 
-![[Pasted image 20251019185519.png]]
+![img1](../images/imageStarvation7.png)
 Despues de mas de 1:30 min el cliente sigue sin recibir ip. Lo cual es un indicador del éxito del PoC.
