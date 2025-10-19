@@ -5,15 +5,14 @@ Primero necesitamos como base, de sistema operativo Ubuntu Server con openssh-se
 sudo apt update && sudo apt upgrade -y
 ```
 
-![[Pasted image 20251019211211.png]]
-
+![img1](images/imageServer1.png)
 Una vez se actializen los repositorios y los paquetes pasamos a instalar el servicio **DHCP**:
 
 ```bash
 sudo apt install isc-dhcp-server -y
 ```
 
-![[2025-10-15-215023_hyprshot.png]]
+![img1](images/imageServer2.png)
 
 Una vez instalado, pasamos a la configuracion de nuestra pool, en este caso la creamos sobre estos rangos:
 
@@ -46,7 +45,7 @@ max-lease-time 7200; #Tiempo maximo de uso IP
 
 Por lo que el archivo de configuracion quedarioa de la siguiente manera
 
-![[2025-10-15-214831_hyprshot.png]]
+![img1](images/imageServer3.png)
 
 Una vez configurado debemos decirle al servicio DHCP en que puerto debe escuchar, en mi caso es `enp1s0`.  Para poder verificarlo simplemente hacemos un `ipconfig` y verificamos como se llama nuestro puerto:
 
@@ -56,11 +55,11 @@ ipconfig
 
 nos dara un output como este:
 
-![[Pasted image 20251019212921.png]]
+![img1](images/imageServer4.png)
 
 Y el archivo de config de los puertos quedara asi:
 
-![[Pasted image 20251019212735.png]]
+![img1](images/imageServer5.png)
 
 Una vez configurado, simplemente reiniciamos el servicio DHCP y si tenemos algun cliente ya en la misma red, deberia darle ip como en la siguiente imagen:
 
@@ -68,8 +67,8 @@ Una vez configurado, simplemente reiniciamos el servicio DHCP y si tenemos algun
 sudo systemctl restart isc-dhcp-server
 ```
 
-![[2025-10-15-231430_hyprshot.png]]
+![img1](images/imageServer6.png)
 
 Si hacemos un ip a en nuestro cliente, vemos como coincide la direccion ip con la de los logs del servidor.
 
-![[2025-10-15-233505_hyprshot.png]]
+![img1](images/imageServer7.png)
