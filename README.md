@@ -41,9 +41,9 @@ DHCP (Dynamic Host Configuration Protocol) es un protocolo de red que automatiza
 
 Este repositorio documenta y demuestra dos ataques representativos contra el servicio DHCP:
 
-* **[DHCP Starvation](DHCP-Starvation/README.md)**: Consiste en agotar el pool de direcciones asignables de un servidor DHCP mediante solicitudes maliciosas (por ejemplo generando múltiples solicitudes con direcciones MAC falsas), de modo que clientes legítimos no puedan obtener concesiones.
+* **[DHCP Starvation](docs/DHCP-Starvation/README.md)**: Consiste en agotar el pool de direcciones asignables de un servidor DHCP mediante solicitudes maliciosas (por ejemplo generando múltiples solicitudes con direcciones MAC falsas), de modo que clientes legítimos no puedan obtener concesiones.
 
-* **[DHCP Spoofing](DHCP-Spoofing/README.md)**: Un atacante se hace pasar por servidor DHCP, respondiendo primero a los clientes con parámetros de red maliciosos (puertas de enlace o DNS controlados) para interceptar o manipular tráfico.
+* **[DHCP Spoofing](docs/DHCP-Spoofing/README.md)**: Un atacante se hace pasar por servidor DHCP, respondiendo primero a los clientes con parámetros de red maliciosos (puertas de enlace o DNS controlados) para interceptar o manipular tráfico.
 
 Cada carpeta de réplica contiene: objetivos, pasos para reproducir en laboratorio, scripts/herramientas usadas (cuando procede), resultados esperados y análisis.
 
