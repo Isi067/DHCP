@@ -3,7 +3,7 @@ Nos referimos a la "**DHCP Starvation Attack Replication**" (**replicación de u
  Para poder replicar este ataque en un laboratorio (entorno seguro) Utilizaremos lo siguiente:
 - Máquina atacante: Kali Linux
 - Cliente DHCP: Ubuntu Desktop
-- Servidor DHCP: Ubuntu Server
+- Servidor DHCP: [Ubuntu Server](../ConfigurandoServidorDHCP.md)
 
 Para poder realizar el ataque utilizaremos una herramienta llamada **Yersinia**, esta es una herramienta diseñada para ejecutar ataques sobre protocolos de Capa 2 del modelo OSI. Aunque DHCP es un protocolo de capa de aplicación (funciona sobre UDP/IP), muchas de sus operaciones iniciales se realizan mediante broadcasts a nivel de enlace, por lo que Yersinia puede manipular las tramas Ethernet para llevar a cabo ataques relacionados con DHCP.
 
