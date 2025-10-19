@@ -1,4 +1,4 @@
-# Que es el DHCP?
+# ¿Qué es el DHCP? 
 El **DHCP** (_Dynamic Host Configuration Protocol_) es un **protocolo de red de capa 7 (cliente/servidor)** del modelo **OSI**. Su principal función es **asignar direcciones IP de forma automática** a los dispositivos que se conectan a la red.
 
 Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red](#QUÉ-ASIGNA). De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para poder comunicarse dentro de la red.
