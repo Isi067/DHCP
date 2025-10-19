@@ -1,3 +1,4 @@
+# Instalando Servidor DHCP
 Una vez entendemos como funciona el protocolo DHCP, vamos a configurar un servidor DHCP.
 Primero necesitamos como base, de sistema operativo Ubuntu Server con openssh-server instalado. Una vez lo tenemos nos conectamos por ssh y empezamos por actualizar el sistema.
 
@@ -13,6 +14,8 @@ sudo apt install isc-dhcp-server -y
 ```
 
 ![img1](images/imageServer2.png)
+
+# Configurando Servidor DHCP
 
 Una vez instalado, pasamos a la configuracion de nuestra pool, en este caso la creamos sobre estos rangos:
 
