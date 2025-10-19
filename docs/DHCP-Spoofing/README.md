@@ -13,9 +13,11 @@ Una vez entendemos la herramienta, la iniciamos y al iniciarla se pone a “esni
 ![img1](../images/imageSpoofing3.png)
 En este caso escogemos DHCP Spoofing
 ![img1](../images/imageSpoofing4.png)
-Configuramos los parametros
+Configuramos los parametros de la pool DHCP.
+
 ![img1](../images/imageSpoofing5.png)
-y vemos como al pedir una nueva ip, nos da como DNS el que hemos seteado 10.10.10.10.
+
+Ahora podemos ver como al pedir una nueva ip, nos da como DNS el que hemos seteado 10.10.10.10.
 ![img1](../images/imageSpoofing6.png)
 
 Al intentar hacer ping a google.com no llegamos ya que ese dns no existe, lo cual , de nuevo, es un indicador del éxito del PoC. Para poder evitar este ataque -- ![Soluciones](../DHCP#Soluciones)
