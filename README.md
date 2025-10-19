@@ -11,9 +11,9 @@
 ## Contenido del repositorio
 
 * `README.md` — Este documento.
-* `DHCP-Starvation/` — Réplica y material relacionado con **DHCP Starvation**.
-* `DHCP-Spoofing/` — Réplica y material relacionado con **DHCP Spoofing**.
-* `docs/` — (Opcional) Documentación extendida, referencias y capturas.
+* `docs/DHCP-Starvation/` — Réplica y material relacionado con **DHCP Starvation**.
+* `docs/DHCP-Spoofing/` — Réplica y material relacionado con **DHCP Spoofing**.
+* `docs/` — Base de la documentación.
 
 ---
 
@@ -27,13 +27,13 @@
 6. [Uso recomendado (pasos rápidos)](#uso-recomendado-pasos-rápidos)
 7. [Mitigaciones y buenas prácticas](#mitigaciones-y-buenas-prácticas)
 8. [Contribuir](#contribuir)
-9. [Licencia y contacto](#licencia-y-contacto)
+9. [Licencia y contacto](#licencia)
 
 ---
 
 ## ¿Qué es DHCP?
 
-DHCP (Dynamic Host Configuration Protocol) es un protocolo de red que automatiza la asignación de parámetros IP (dirección IP, máscara de subred, puerta de enlace, DNS, etc.) a los dispositivos que se conectan a una red. Para una explicación más detallada, ver la sección: `docs/DHCP.md` o la entrada `DHCP#¿Qué es el DHCP?` dentro de la documentación.
+DHCP (Dynamic Host Configuration Protocol) es un protocolo de red que automatiza la asignación de parámetros IP (dirección IP, máscara de subred, puerta de enlace, DNS, etc.) a los dispositivos que se conectan a una red. Para una explicación más detallada, ver la sección: [docs/DHCP.md](docs/dhcp.md).
 
 ---
 
@@ -51,8 +51,8 @@ Cada carpeta de réplica contiene: objetivos, pasos para reproducir en laborator
 
 ## Ataques incluidos
 
-* `DHCP-Starvation/README.md` — explicación teórica, precondiciones, scripts de ejemplo y pasos para ejecutar la réplica.
-* `DHCP-Spoofing/README.md` — explicación teórica, configuración de un servidor DHCP falso, ejemplos y pruebas de verificación.
+* `docs/DHCP-Starvation/README.md` — explicación teórica, precondiciones, y pasos para ejecutar la réplica.
+* `docs/DHCP-Spoofing/README.md` — explicación teórica, ejemplos y pruebas de verificación.
 
 ---
 
@@ -68,11 +68,11 @@ Cada carpeta de réplica contiene: objetivos, pasos para reproducir en laborator
 
 Recomendado para el laboratorio:
 
-* Red aislada (no conectada a Internet, o VLAN/segmento de laboratorio) o emulación (p. ej. GNS3, EVE-NG, máquinas virtuales).
+* Red aislada (Se sugiere red NAT virtual) o emulación (p. ej. GNS3, EVE-NG, máquinas virtuales).
 * Máquina atacante: Linux (Kali/Parrot/Ubuntu) con privilegios para enviar/recibir paquetes raw.
-* Máquina víctima (o varias): cliente DHCP estándar (Windows, Linux, etc.).
+* Máquina víctima: cliente DHCP estándar (Windows, Linux, etc.).
 * Servidor DHCP legítimo para comparar comportamientos.
-* Herramientas sugeridas: `scapy`, `dhclient`, `dhcping`, utilidades propias incluidas en las carpetas de réplica.
+* Herramientas sugeridas: `yersinia`, `dhclient`, `ettercap`, utilidades propias incluidas en las carpetas de réplica.
 
 **Nota:** Asegúrate de tener permisos y de trabajar en un entorno de pruebas controlado.
 
@@ -81,8 +81,8 @@ Recomendado para el laboratorio:
 ## Uso recomendado (pasos rápidos)
 
 1. **Leer** la sección `docs/DHCP.md` o `DHCP#¿Qué es el DHCP?` para entender el flujo básico del protocolo.
-2. **Configurar** una red de laboratorio aislada (ej. VM-VM o VLAN) con un servidor DHCP legítimo.
-3. **Revisar** los `README` dentro de `DHCP-Starvation/` y `DHCP-Spoofing/`.
+2. **Configurar** una red de laboratorio aislada (vm) con un servidor [DHCP legítimo](docs/preparacion-entorno.md).
+3. **Revisar** los `README` dentro de `docs/DHCP-Starvation/` y `docs/DHCP-Spoofing/`.
 4. **Seguir** las instrucciones paso a paso en cada carpeta para ejecutar las réplicas. Cada réplica contiene:
 
    * Precondiciones y advertencias.
@@ -108,21 +108,9 @@ Cada carpeta de réplica incluye una sección con recomendaciones prácticas esp
 
 ---
 
-## Contribuir
-
-Si quieres mejorar este repositorio:
-
-1. Haz un *fork* y crea una rama nueva.
-2. Añade escenarios adicionales, scripts reproducibles o documentación ampliada en `docs/`.
-3. Abre un *pull request* describiendo los cambios y las pruebas realizadas.
-
-Por favor mantén todo el contenido enmarcado en un uso responsable y legal.
-
----
-
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia **MIT** (o la que prefieras especificar). Consulta el archivo `LICENSE` para más detalles.
+Este proyecto se distribuye bajo la licencia **MIT** (o la que prefieras especificar). Consulta el archivo [LICENSE](license.md) para más detalles.
 
 ---
 
@@ -133,12 +121,3 @@ Este proyecto se distribuye bajo la licencia **MIT** (o la que prefieras especif
 * Artículos y whitepapers sobre ataques DHCP y mitigaciones.
 
 ---
-
-## Contacto
-
-Si tienes dudas o quieres colaborar, abre un *issue* en este repositorio o contacta al mantenedor.
-
----
-
-*Última actualización: —*
-(Actualiza la fecha antes de publicar si lo deseas.)
