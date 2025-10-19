@@ -1,7 +1,7 @@
 # Que es el DHCP?
 El **DHCP** (_Dynamic Host Configuration Protocol_) es un **protocolo de red de capa 7 (cliente/servidor)** del modelo **OSI**.Su principal función es **asignar direcciones IP de forma automática** a los dispositivos que se conectan a la red.
 
-Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red[enlace a ¿QUÉ ASIGNA?]]. De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para comunicarse dentro de la red.
+Cuando se configura un servidor DHCP, este se encarga de proporcionar a los clientes —que tengan habilitado el servicio DHCP— una **dirección IP** junto con [otros parámetros de configuración de red](#QUÉ-ASIGNA). De este modo, al conectar un equipo a una red con un servidor DHCP activo, recibirá automáticamente toda la información necesaria para comunicarse dentro de la red.
 
 
 # ORIGEN
@@ -45,7 +45,7 @@ Existen 3 modos de asignacion de IP en DHCP:
 - Automática
 	- El servidor DHCP asigna una dirección IP al cliente, y este lo mantiene hasta que la libera
 - Dinámica
-	- Es igual que la [Automatica[referencia a automatica]] solo que la concesion DHCP no es indefinida sino que tiene un limite de tiempo.
+	- Es igual que la automatica solo que la concesion DHCP no es indefinida sino que tiene un limite de tiempo.
 
 
 # APIPA
@@ -74,7 +74,7 @@ La asignación automática de direcciones IP mediante el protocolo DHCP tiene lu
 - Discover
 	- El cliente DHCP envia un **DHCPDISCOVER** desde la ip y puerto **0.0.0.0:68** hacia **255.255.255.255:67**. Al enviarlo hacia broadcast (255.255.255.255) el switch lo envia hacia todos los equipos de la red local, como el servidor DHCP siempre escucha por el puerto 67, recibe el paquete y pasa al siguiente paso.
 - Offer
-	- El servidor DHCP responde al paquete **DHCPDISCOVER** del cliente **DHCP** con el paquete **DHCPOFFER** hacia el puerto **68**, este es un paquete con el **_lease time_** (si es dinámica) y [parametros de red[Referencia a ¿QUÉ ASIGNA?]].
+	- El servidor DHCP responde al paquete **DHCPDISCOVER** del cliente **DHCP** con el paquete **DHCPOFFER** hacia el puerto **68**, este es un paquete con el **_lease time_** (si es dinámica) y [parametros de red](#QUÉ-ASIGNA).
 - Request
 	- El Cliente **DHCP** le pide al servidor **DHCP** que se la reserve solo a él (**DHCPREQUEST**).
 - Acknowlege
