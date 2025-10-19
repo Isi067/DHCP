@@ -81,7 +81,7 @@ Recomendado para el laboratorio:
 ## Uso recomendado (pasos rápidos)
 
 1. **Leer** la sección `docs/DHCP.md` o `DHCP#¿Qué es el DHCP?` para entender el flujo básico del protocolo.
-2. **Configurar** una red de laboratorio aislada (vm) con un servidor [DHCP legítimo](docs/preparacion-entorno.md).
+2. **Configurar** una red de laboratorio aislada (vm) con un servidor [DHCP legítimo](docs/Configurando-Servidor-DHCP.md).
 3. **Revisar** los `README` dentro de `docs/DHCP-Starvation/` y `docs/DHCP-Spoofing/`.
 4. **Seguir** las instrucciones paso a paso en cada carpeta para ejecutar las réplicas. Cada réplica contiene:
 
