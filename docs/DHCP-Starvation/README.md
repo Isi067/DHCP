@@ -1,4 +1,4 @@
-
+# DCHP Starvation
 Nos referimos a la "**DHCP Starvation Attack Replication**" (**replicación de un ataque DHCP Starvation**) cuando un atacante genera un gran número de solicitudes DHCP falsas para agotar el pool de direcciones IP disponibles, impidiendo que los clientes legítimos obtengan configuración y dejando la red expuesta a otros ataques posteriores.
  Para poder replicar este ataque en un laboratorio (entorno seguro) Utilizaremos lo siguiente:
 - Máquina atacante: Kali Linux
